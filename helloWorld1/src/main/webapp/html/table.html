@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table.html</title>
+</head>
+
+<body>
+    <a href = "#hong">홍길동의 자기소개</a><br>
+    <a href = "#frequent">자주가는 사이트</a>
+    <h3> 학생 점수 </h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>tilte 부분</td>
+                <th>이름</th>
+                <th>영어</th>
+                <th>수학</th>
+                <th>합계</th>
+                <!-- 타이틀 역할이므로 th로 사용. 폰트 두꺼워짐 -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2"> data 부분</td>
+                <td>홍길동</td>
+                <td>80</td>
+                <td>70</td>
+                <td>150</td>
+            </tr>
+            <tr>
+                <td>김민수</td>
+                <td>85</td>
+                <td>77</td>
+                <td>162</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>footer 부분</td>
+                <td colspan="4"> 3학년 9반 점수 리스트 </td>
+                <!-- colspan 셀 4개 병합과 동일한 역할 -->
+            </tr>
+        </tfoot>
+    </table>
+    <br>
+
+    <figure>
+        <table>
+            <table border="1" id = "hong">
+                <caption>홍길동의 자기소개</caption>
+                <tbody>
+                    <tr>
+                        <td>이름 </td>
+                        <td>홍길동</td>
+                        <td> 연락처</td>
+                        <td> 010-1234-4567</td>
+                        <td>사진</td>
+                    </tr>
+                    <tr>
+                        <td> 주소</td>
+                        <td colspan="3">대구 광역시 중구 중앙대로</td>
+                        <td rowspan="2"><a href="../profile/hong.html"><img width="80px" src="../img/hong.png"
+                                    alt="홍길동의 증명사진입니다.">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>자기소개</td>
+                        <td colspan="3">프로그램을 공부하는 학생</td>
+
+                    </tr>
+                </tbody>
+
+
+            </table>
+            <a href="#">TOP</a>
+            <figcaption style="padding-left : 12%;">
+                홍길동의 자기 소개 입니다.
+
+            </figcaption>
+
+    </figure>
+
+    <table border="1" id = "frequent">
+        <caption> 자주 가는 사이트 </caption>
+       
+        <tr>
+            <th> 사이트명</th>
+            <th> url </th>
+            <th> 설명 </th>
+            <th> 로고 </th> >
+        </tr>
+        <tr>
+            <td> 다음 </td>
+            <td><a target="_blank" href="https://www.daum.net">www.daum.net</a></td>
+            <!-- 하이퍼 링크 : <a href = "https://~ 실제 도메인주소"> 링크걸 문장 </a>  -->
+            <td> 다음 사이트 주소입니다. </td>
+            <td>
+                <a target="_blank" href="https://www.daum.net">
+                    <img src="../img/daum.PNG" alt="daum 이미지" width="80px">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td> 구글 </td>
+            <td> <a target="_blank" href="https://www.google.com">www.google.com</a> </td>
+            <td> 구글 검색 엔진입니다. </td>
+            <td><a target="_blank" href="https://www.google.com">
+                    <img src="../img/google.PNG>" alt="google 이미지" width="80px">
+                </a>
+            </td>
+
+
+        </tr>
+        <tr>
+            <td> 네이버 </td>
+            <td> <a target="_self" href="https://www.naver.com">www.naver.com</a> </td>
+            <td> 네이버 페이지입니다. </td>
+
+            <td>
+                <a target="_self" href="https://www.naver.com">
+                    <img src="../img/naver.PNG" alt="naver 이미지" width="80px">
+                </a>
+            </td>
+        </tr>
+        
+
+
+    </table>
+
+    <a href="#">TOP</a><br>
+    
+    <a href="../AddBankMemberServlet?id=user1&pw=1234&name=김사용&role=0"> bank 멤버 추가하기 </a>
+    <br>
+    <a href="https://developer.mozilla.org/ko/docs/Web/HTML#key_resources" target ="_blank">mdn의 중요한 자료</a>
+    <br>
+    <a href="https://developer.mozilla.org/ko/docs/Web/HTML#beginners_tutorials" target ="_blank"> mdn의 초보자 학습서</a>
+        <!-- #해당 부분으로 바로 갈 수 있게 해주는 표시  -->
+    <p>Lorem </p> 
+    <!-- lorem 무의미한 문장들 자동으로 써줌(양채울떄) -->
+    ipsum dolor <br> 
+    sit amet consectetur <br>
+    adipisicing elit. <br>
+    Architecto voluptate eius <br>
+    nemo quasi assumenda quia<br>
+    nesciunt dolore praesentium modi consectetur, <br>
+    perspiciatis ut voluptates ex optio, <br>
+    deserunt doloremque officiis voluptatum quisquam!<br>
+    Lorem ipsum dolor, <br> 
+    sit amet consectetur adipisicing elit. <br>
+    Tenetur laudantium repudiandae quod consectetur <br>
+    et nisi maxime excepturi aperiam! <br>
+    Ea magni aliquid officiis quod enim in <br>
+    doloribus iusto quae voluptates omnis!
+
+
+</body>
+
+</html>
