@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS/pseudo_selector.html</title>
+    <style>
+        /* 가상 선택자 : 어떤 상태가 되었을 때. */
+        /* ex) 마우스가 올라갔을때(hover).. */
+        a:visited{
+            color: violet;
+        }
+        a:hover{
+            color: red;
+        }
+        a:active{
+            background-color: blue;
+        }
+        input:focus{
+            background-color: red;
+        }
+        input:checked +span{
+            color : red;
+        }
+        input[type='checkbox']:checked+span{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.daum.net" target="_blank">Daum</a><br>
+    <input type = "text" name = "" id ="" placeholder = "focus me">
+    <br>
+    <input type="radio" name = "gender" id=""><span>Male</span><br>
+    <input type="radio" name = "gender" id=""><span>Female</span><br>
+    <input type="radio" name = "gender" id=""><span>Neuter</span><br>
+    <br>
+    <input type="checkbox" name = "" id=""><span>자전거</span><br>
+    <input type="checkbox" name = "" id=""><span>자동차</span><br>
+    <input type="checkbox" name = "" id=""><span>모터사이클</span><br>
+</body>
+</html>

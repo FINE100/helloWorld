@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS/combinator_selector.html</title>
+</head>
+<style>
+    /* div기준으로 자손을 가지고 올때 div>p */
+    div>p {
+        color: red;
+    }
+
+    p+span {
+        /* +의 의미:  p 태그의 인접한 span 태그 선택. */
+        color: blue;
+    }
+
+    p~span {
+        /*p태그 형제(sibling) 태그 선택 -> 인접하지 않아도 선택*/
+        font-size: 1.5em;
+    }
+
+
+</style>
+
+<body>
+
+    <div>
+        <p></p>
+        <span class="first"></span>
+    </div>
+
+
+    <h1>Heading</h1>
+    <div>
+        <p>paragraph1</p>
+        <p>paragraph2</p>
+        <span>
+            <p>paragraph3</p>
+        </span>
+        <span>
+            span1
+        </span>
+        <div>div</div>
+        <span>span2</span>
+    </div>
+    <p>paragaph4</p>
+
+</body>
+
+</html>

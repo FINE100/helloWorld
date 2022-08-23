@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<style>
+    h3 {
+        text-align: center; 
+        background-color : whitesmoke;
+    }
+    
+    /* <!-- text-aling : 텍스트인경우, center = 가운데 정렬--> */
+
+    form{
+        border: 1px solid white;
+        width: 55%;
+        margin: auto;
+    }
+    ul {
+        list-style-type: none;
+    }
+    
+    label{
+        display: inline-block;
+        width : 150px;
+        background-color: whitesmoke;
+        text-align: right;
+        padding-right: 10px;
+    }
+    
+        input[type = 'submit'] {
+        width : 100%;
+    }
+
+</style>
+<body>
+    <!--147p 회원가입 페이지-->
+    <h3> 회원 가입</h3>
+    <form action="">
+        <fieldset>
+            <legend> 로그인 정보 </legend>
+            <ul>
+                <li>
+                    <label for="id">아이디</label>
+                    <input type="text" name="id" id="id">
+                    <button type="button">중복확인</button>
+                </li>
+                <li>
+                    <label for="passwd">비밀번호</label>
+                    <input type="password" name="passwd" id="passwd">
+
+                </li>
+                <li>
+                    <label for="passwd2">비밀번호 확인</label>
+                    <input type="password" name="passwd2" id="passwd2"> </li> </ul> </fieldset> <fieldset>
+                    <legend>개인 정보</legend>
+
+                    <ul>
+
+                        <li>
+                            <label for="name">이름</label>
+                            <input type="text" name="name" id="name" required>
+                            <!--required : 반드시 값을 입력하게 만드는 것-->
+                        </li>
+
+                        <li>
+                            <label for="mail">메일 주소</label>
+                            <input type="email" name="mail" id="mail">
+                        </li>
+
+                        <li>
+                            <label for="tel">연락처</label>
+                            <input type="tel" name="tel" id="tel">
+                        </li>
+
+                        <li>
+                            <label for="myhome">블로그/홈페이지</label>
+                            <input type="url" name="myhome" id="myhome">
+                            <!-- url은 http:// 부터 시작해야함-->
+                        </li>
+                        <li>
+                            <label for="birth">생년월일</label>
+                            <input type="date" name="birth" id="birth">
+                            
+                        </li>
+                    </ul>
+
+        </fieldset>
+        <br>
+
+        <input type="submit" value="가입하기">
+
+    </form>
+
+
+
+</body>
+
+</html>
