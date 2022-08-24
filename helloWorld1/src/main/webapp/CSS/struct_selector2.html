@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>struct_selector2.html</title>
+    
+    <style>
+        /* 구조적 가상 선택자 (태그가 섞여 있을 때) */
+        div>p:nth-of-type(2){
+            /* p: nth-of-type  > p태그 중에서만 순번을 찾아 선택  */
+            /* div>p: nth-of-type > div 안에서 p태그 중 순번 찾아 선택 */
+            color: red;
+        }
+
+        div>p:nth-last-of-type(2n){
+            border : 1px solid green;
+            /* div 안에서 p 태그 중 마지막부터 순서 찾기 */
+        }
+        div>p:first-of-type{
+            background-color: yellow;
+            /* div 안에서 p 태그중 첫번째 */
+        }
+        div>p:last-of-type{
+            background-color: bisque;
+            /* div 안에서 p 태그중 마지막 */
+        }
+
+        /* 부정 선택자 */
+
+        /* input[type ='text'], input[type ='email'] */
+        /* { background-color: yellow;}   
+           >> 이렇게 하나씩 지정하는 대신 부정 선택자 이용*/
+
+        input:not([type='password']){
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    
+        <h3> Espresso </h3>
+        <p> Americano </p>
+        <p> Caffee Latte </p>
+        <p> Cappuchino </p>
+        <h4> Caramel Latee </h4>
+        <p> Caffe Mocha</p>
+    
+    <div>
+        <h3> Espresso </h3>
+        <p> Americano </p>
+        <p> Caffee Latte </p>
+        <p> Cappuchino </p>
+        <h4> Caramel Latee </h4>
+        <p> Caffe Mocha</p>
+    </div>
+
+    <!-- 부정선택자 -->
+
+    <input type="text" value="Text"> <br>
+    <input type="email" value = "email"> <br>
+    <input type="password" value="1234"> <br>
+
+    
+</body>
+</html>

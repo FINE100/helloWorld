@@ -1,0 +1,100 @@
+header{
+    width:65%;
+    background-color: rgb(12,181,223);
+    padding : 5px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+header>h1{
+    width: 35%;
+    float : left;
+    color: white;
+    margin-left : 20px;
+}
+
+header>nav{
+     width:50%;
+    float : right;
+    margin-top: 20px;
+}
+
+header>nav>ul>li{
+    display: inline-block;
+    margin: 0 3px;
+    border-top: 2px solid black;
+}
+
+nav>ul>li>a{
+    color:white;
+    text-decoration: none;
+}
+
+section{
+    width : 65%;
+    margin : 0 auto;
+    border : 2px solid black;
+
+}
+
+section>article{
+    margin : 5px;
+    padding : 10px;
+
+}
+
+article{
+    width : 90%;
+    height : auto;
+    margin : 20px 10px;
+    padding : 20px;
+}
+
+
+dt{
+    color : purple;
+    font-weight: bold;
+}
+
+footer{
+    width : 65%;
+    margin : 3px auto;
+    padding-top : 10px;
+    height: 45px;
+    color: white;
+    text-align: center;
+    padding: 3px;
+    background-color: navy;
+    line-height: auto;
+    
+    
+}
+
+
+#pet1{
+    border : 2px solid  black;
+    border-radius:10px;
+    margin : 10px auto;
+    padding : 30px;
+}
+
+#pet2{
+    border: 2px dotted blue;
+    border-radius : 2px;
+    margin : 10px auto;
+    padding : 30px;
+}
+
+#pet3{
+    border: 2px double green;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    margin : 10px auto;
+    padding : 30px;
+}
+
+aside{
+    margin-left : 3%;
+    
+    padding : 20px;
+}
