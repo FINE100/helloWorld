@@ -1,0 +1,110 @@
+/*joandoral.css */
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    box-sizing: border-box;
+    /* margin : 0; */
+}
+
+.container {
+    width: 60%;
+    margin: 5px auto;
+    /*좌우 정렬*/
+    border: 1px solid #e7e7e7;
+}
+
+header {
+    height: 250px;
+    background-image: url(./images/bg.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+    position:relative;
+}
+
+header h1{
+    position: absolute;
+    bottom: 70px;
+    right: 20px;
+    color: wheat;
+    font-size: 3em;
+
+}
+
+header h2{
+    position : absolute;
+    right: 20px;
+    bottom: 40px;
+    font-size : 2em;
+    color: yellow;
+}
+
+.navi{
+    height: 60px;
+    background-color: black;
+    position: relative;
+    top : -15px;
+    
+}
+
+.navi ul{
+    list-style-type: none;
+    margin-left : 20%;
+
+}
+
+.navi ul li{
+    display: inline-block;
+    padding-top: 22px;
+}
+
+.navi ul li a{
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navi ul li a:hover{
+    color: yellow;
+}
+
+.content{
+    width : 55%;
+    float: left;
+    padding : 5px;
+    margin-right: 5%;
+}
+
+.sidebar{
+    width : 35%;
+    float: left;
+    padding : 10px;
+    background-color: #dfd;
+}
+
+.sidebar p{
+    line-height: 1.5em;
+}
+
+.sidebar img{
+    opacity: .4;
+    transition : 1s;
+    /* transition : 지연 시간 */
+    margin-bottom: 20px;
+}
+
+.sidebar img:hover{
+    opacity: 1;
+    transform: scale(1.3) translate(25px, 5px);
+    /* transform : scale 크기 크게 만듦 */
+}
+
+footer{
+    clear: both;
+    background-color: black;
+    color : white;
+    text-align: center;
+    padding : 5px 0;
+}

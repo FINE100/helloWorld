@@ -1,6 +1,6 @@
 header{
     width:65%;
-    background-color: rgb(12,181,223);
+    background-color: rgb(13, 132, 83);
     padding : 5px;
     margin: 0 auto;
     overflow: hidden;
@@ -10,13 +10,13 @@ header>h1{
     width: 35%;
     float : left;
     color: white;
-    margin-left : 20px;
+    margin-left : 40px;
 }
 
 header>nav{
-     width:50%;
+    width:50%;
     float : right;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 header>nav>ul>li{
