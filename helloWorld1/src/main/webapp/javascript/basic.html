@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 자바 스크립트는 단독으로 못 씀. html 파일의 <body> 내부에서 사용 가능 -->
+<body>
+    <h3>Hello, World</h3> 
+    <script>
+        let person = {
+            name: "Hong", 
+            age: 20, 
+            showInfo : function (){
+                console.log('이름은 : ' + this.name + ',나이는 ' + this.age);
+            }
+        }
+         /* ""와 '' 모두 문자열. 아무거나 써도 됨. {} 는 오브젝트*/
+   
+         // 직접 만든 오브젝트.
+        person.showInfo();                         // object에 있는 함수 : 메소드.
+        
+        // 웹브라우저가 가지고 있는 오브젝트.
+        document.write('<h1>Hello, Wolrd!</h1>'); // 매개값 출력해줌, 태그로 묶을 수도 있음    
+        //window.alert('경고 구문입니다!!!!!'); // 경고 메세지 창 뜸
+        
+        let fruits = ['사과', '바나나', '배', '복숭아']; // 배열 :object
+        let str = '<ul>';
+        //  for(let i =0; i<4; i++){
+        //     str += '<li>'+fruits[i]+'</li>'; // + 연산자 : concat()
+        // }
+        for(let fruit of fruits){ // 확장 for문, 일반 for문 보다 간단하다 
+            str += '<li>'+fruit + '</li>';
+        }
+        str += '</ul>';
+        document.write(str);
+
+        let member = {
+            userId: 'hong', 
+            userName : '홍길동',
+            point : 350
+        }
+
+        console.log(member.userId); //'hong'
+        console.log(member['userName']); //'홍길동'
+        
+        let field = 'point';
+        console.log(member[field]); //350
+
+        // object의 각각의 속성을 전체 읽어오는 반복문.
+        for(let prop in member) {
+            console.log('속성:' + prop+', 값 : ' + member[prop]);
+        }
+
+
+    </script>
+    
+</body>
+</html>
