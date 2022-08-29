@@ -10,8 +10,6 @@ const members = [
 
 
 
-
-
 function makeTr(mem, color){
     let tr = `<tr style='color: ${color}' >`;
     for(let prop in mem){
