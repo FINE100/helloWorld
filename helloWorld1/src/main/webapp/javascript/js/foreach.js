@@ -26,7 +26,7 @@ str += '<tr><th>아이디</th><th>이름</th><th>점수</th>/<th>연락처</th><
 members.forEach(function(val, ind, ary) => {
     if(val.gender == 'M'){  // 남자일 경우 makeBlueTr을 호출
         str += makeTr(val,'blue');
-    }else if(val.gender == 'W'){ // 여자일 경우 makeRedTr을 호출 
+    } else if(val.gender == 'W'){ // 여자일 경우 makeRedTr을 호출 
         str += makeTr(val, 'red');
 
     }
