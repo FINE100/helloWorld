@@ -1,0 +1,125 @@
+body {
+    font-family:"Malgun Gothic", "굴림", "Gulim", "Arial";   
+    border: 1px solid gray;
+}
+
+
+#container{				
+    margin: auto;
+    box-sizing: border-box;
+    width: 1000px;
+}
+
+#header{
+    padding: 0 2%;   
+    text-align: center;
+    overflow: hidden;
+    
+}
+
+#topmenu{
+    
+    background-color: pink;
+    color:white;
+    list-style:none;
+   
+
+}
+
+a{
+    text-decoration: none;
+}
+
+
+header>nav{
+    box-sizing: border-box;
+    width: 1000px;
+    float : left;
+    margin-top: 15px;  
+}
+
+form{
+    width: 500px;
+    background-color: #ccc;
+}
+
+form>fieldset{
+    border : none;
+}
+legend{
+    font-Style: bold;
+    text-align: center;
+}
+
+form>li{
+    border : 1px dotted white;
+    background-color: white;
+    opacity: 0.5;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+
+
+section{
+    width : 600px;
+    height: 700;
+    padding:3px ;
+    margin : 0 auto;
+    border : 2px solid black;
+
+}
+
+#contents{
+    float: left;
+    width: 100%;
+    text-decoration: none;
+}
+
+
+#left-sidebar{
+    float: left;
+    width: 200px;
+    height: 700px;
+   
+    
+}
+
+#right-sidebar{
+    float: right;
+    width: 200px;
+    height: 700px;
+  
+}
+
+#footer{
+    clear: both;
+    text-align: center;
+    background-color: yellow;   
+}
+
+input{
+    width: 250px;
+    padding : 3px;
+  
+}
+
+#button1{
+width: 150px;
+background-color: #ddd;
+border-radius: 2px;
+border-radius: 10px;
+border : none; 
+
+}
+
+#button2{
+    width: 150px;
+    background-color: #ddd;
+    border-radius: 2px;
+    border-radius: 10px;
+    border : none; 
+    
+    }
+
+   
