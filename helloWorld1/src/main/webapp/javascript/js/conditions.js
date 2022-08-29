@@ -61,15 +61,6 @@ document.write(str);
 
 
 
-
-
-
-
-
-
-
-
-
 const passMember = [];
 
 for (let i = 0; i < members.length; i++) {

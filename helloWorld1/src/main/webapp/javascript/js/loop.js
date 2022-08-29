@@ -6,6 +6,7 @@ let numbers = [23, 33, 14, 52, 77, 55, 16];
 //let result = 짝수합; 
 
 let result =0;
+
 for(let i=0; i<numbers.length; i++){
     if(numbers[i]%2==0){
         result += numbers[i]

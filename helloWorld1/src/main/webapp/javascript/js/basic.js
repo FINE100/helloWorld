@@ -10,7 +10,7 @@ for(let prop in student){
     console.log(student[prop]);
 }
 
-// console.log(student);
+//console.log(student);
 
 
 //array
