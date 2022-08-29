@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/default.html</title>
+    <script src="./js/#practice.js "></script>
+</head>
+<body>
+    <!-- 2교시 2번째 작업 -->
+   나이<input type = "number" name ="num1" id="num1" value ="30">
+   나이<input type = "number" name ="num2" id="num2" value ="50">
+
+    <script>
+       let val = document.querySelector('input[type="number"]').value;
+       let val2 = document.querySelector('#num2').value; //id값 num2 읽어오기
+       console.log(typeof val, val); //문자열 타입으로 나옴
+
+
+       // 자료형의 변환 
+
+        //숫자형 변환
+       console.log(parseInt(val) + parseInt(val2)); // 80
+       // console.log(val + val2); 할 경우 문자열 합이라 '3050' 으로 나옴. 자료형 변환 필요.
+
+
+
+    </script>
+
+</body>
+</html>
