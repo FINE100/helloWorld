@@ -8,22 +8,24 @@ arr.push(20); // 값 입력
 let obj = {
     sname : 'Hong',
     age : 20, 
-    friends : ['Park'], //배열타입
+    friends : [{sname:'Park'}],//배열타입
+
+
     addFriend : function(friend){
         this.friends.push(friend);
     },
         //친구의 이름을 콘솔 출력
     friendList : function(){
-        for(let i =0; i<obj.length;i++){
-
-            console.log()
-    
+        for(let i =0; i<obj.friends.length;i++){            
+            console.log(obj.friends[i].sname);    
         }
     }
 
 }
 
-obj.addFriend('Kim');
-obj.addFriend({name :'Hwang', phone : '010-1234-5678'}) ;
+obj.addFriend({sname:'Kim'});
+obj.addFriend({sname :'Hwang', phone : '010-1234-5678'}) ;
 
 console.log(obj.friends[2]['phone']); // obj.friends[2] = obj.addFriend({name :'Hwang', phone : '010-1234-5678'}) ;
+
+obj.friendList();

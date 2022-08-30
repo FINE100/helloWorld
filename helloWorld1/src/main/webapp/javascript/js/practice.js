@@ -65,6 +65,8 @@ randomVals.forEach(function(val){
 
 
 
+// ============================[수업 시간 예제]================================================================
+
 
 // Math.random : (1) 0 <= random < 1 (부동소수점, 실수).
 const tmpAry =[];
@@ -88,16 +90,24 @@ tmpAry.forEach(function(val){
 //Math.random() : 0 ~ 1 임의값 생성.
 // 21 ~ 50 까지의 임의 값을 생성. : Math.ceil(Math.random()*30)+20
 
-
-//예제 3) 짝수만 출력 (콜백함수 만들어서 forEach로 부르기)
-
+// 짝수만 출력 (콜백함수 만들어서 forEach로 부르기)
 
 
-randomVals.forEach(calrandom)
+const randomAry =[];
 
-function calrandom(val){
-    if(val%2==0){
-        
-    }
-
+for(let i=0; i<5; i++){
+    let val = Math.ceil(Math.random()*10);
+    randomAry[i] = val;
+    console.log('추첨 번호 : ' + val);
 }
+
+//2) forEach로 콜백 함수 호출
+randomVals.forEach(showEven); 
+
+//1) 콜백함수(callback function)로 정의.
+function showEven(val){
+    if(val % 2 ==0){
+        console.log(val);
+    }
+}
+
