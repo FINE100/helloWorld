@@ -58,7 +58,10 @@
                 case 7: return 31;
                 case 8: return 31;
                 case 9: return 30;
-                default: return 100;
+                case 10: return 31;
+                case 11: return 30;
+                case 12: return 31;
+                 default: return 100;
             }
         }
 
@@ -76,8 +79,9 @@
 
         cal += '<tr>';
         // 1일 위치지정. 마지막날의 값을 반환.
-        let empty = getEmptyCnt(8);
-        let lastDay = getLastDay(8);
+        let mon =11;
+        let empty = getEmptyCnt(mon);
+        let lastDay = getLastDay(mon);
 
         for (let f = 0; f < empty; f++)
             cal += '<td></td>';

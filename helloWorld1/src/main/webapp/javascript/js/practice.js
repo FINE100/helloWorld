@@ -15,7 +15,7 @@ switch ((a - 1) % 5 + 1) {
 // for
 let frirends =[ 
     {name : '라이언, ', age: 5},
-    {name : '어치피, ', age: 7},
+    {name : '어피치, ', age: 7},
     {name : '춘식이, ', age: 3}
 ]
 

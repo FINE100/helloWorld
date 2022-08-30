@@ -56,4 +56,5 @@ const str = 'The quick brown fox jumps over the lazy dog.';
 const strAry = str.split(' ');  // 단어마다(띄워쓰기 한 단위마다) 추출, string -> array 
 console.log(strAry.join('-')); //'The-quick-brown-fox-jumps-over-the-lazy-dog.'
 
-console.log('   hello,  '.replace(/\s{2}$/,'tt')); //.replace(/\s{2}$/,'tt') >> 문자열 끝에서 공백 2개를 tt로 변경
+console.log('   hello,     '.replace(/\s{2}$/,'tt')); //.replace(/\s{2}$/,'tt') >> 문자열 끝에서 공백 2개를 tt로 변경
+
