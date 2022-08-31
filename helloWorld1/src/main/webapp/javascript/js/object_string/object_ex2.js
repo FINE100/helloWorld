@@ -5,6 +5,7 @@
 
 function Estimate(param){
     this.unit = param;
+    
     this.getEstimate = function(unitType, width, height){
         let priceInfo = this.unit.find(val => val.type == unitType);
         return priceInfo.price*width*height;
