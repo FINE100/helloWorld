@@ -95,7 +95,7 @@ function addMember(){
     console.log(mid.value, mname.value, mphone.value);
 
     // 저장값이 없으면 warning.
-    if(!mid.value || !mname.value|| !mphone.value){
+    if(!mid.value || !mname.value|| !mphone.value){ 
         alert('필수값을 입력하세요!!!');;
         return; //return이 있으면 break; 역할함(강제종료)
     }

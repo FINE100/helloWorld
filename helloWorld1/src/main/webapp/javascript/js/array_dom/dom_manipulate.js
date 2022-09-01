@@ -2,7 +2,7 @@
 //dom_mainpulate.js
 
 // element 생성 : createElement()
-// textNode 생성 : createTextNede()
+// textNode 생성 : createTextNode()
 // 부모-자식 형성 : appendChild()
 
 

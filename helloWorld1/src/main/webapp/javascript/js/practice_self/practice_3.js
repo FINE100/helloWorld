@@ -29,3 +29,4 @@ let result = estmate.getEstimate('wood', 30, 50);
 estmate.addUnit({type : 'ceramic', price : 400});
 result = estmate.getEstimate('ceramic', 30, 50);
 console.log(result);
+
