@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data_go.html</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        table{
+            width: 70%;
+            float: left;
+            border: 1px solid green;
+        }
+
+        div#detailInfo {
+            width: 30%;
+            float: left;
+            border: 1px solid green;
+            height: 300px;
+        }        
+    </style>
+</head>
+<body>
+    <h3>예방접종센터 조회</h3>
+    <label for="center"> 조회대상입력: <input type="text" name = "center" id = "center"></label>
+    <button id = "searchBtn">조회</button><br>
+
+    <label for="">시도리스트<select id="sido"><option>선택</option></select></label>
+    <br><br>
+    <hr>
+    
+    <table border="1">
+        <thead>
+            <th>시설아이디</th>
+            <th>센터명</th>
+            <th>시도</th>
+            <th>시군구</th>
+            <th>연락처</th>
+            <th>주소</th>
+        </thead>
+        <tbody id="list"></tbody>
+    </table>
+
+    <div id ="detailInfo">
+        <ul>
+            <li>org:<span>국립중앙의료원</span></li>
+            <li>lat:<span>12.34567</span></li>
+            <li>lng:<span>123.457</span></li>
+        </ul>
+    </div>
+
+    <script>
+        // 숙제: 시설 아이디에 마우스 가져다대면(hover) org, lat, lng 나오게하기 -> 이벤트, li > span 내용 변경되게끔 
+        //document.getElementById().addEventListener('mouse over', );
+        // 조회 클릭.
+        document.getElementById('searchBtn').addEventListener('click', searchCenterFnc);
+       // 리스트 선택
+        document.getElementById('sido').addEventListener('change', searchCenterFnc); 
+
+        // 화면 초기화
+        let gdata;
+
+        // url 정보 : page= 페이지수 & perPage=데이터수 & returnType=JSON & serviceKey=인증키 (데이터수 숫자 바꾸면 페이지당 부르는 데이터 바뀜)
+        let req_url = `https://api.odcloud.kr/api/15077586/v1/centers?page=1&perPage=284&returnType=JSON&serviceKey=LJR7byUX4X0BnKQSVtJVnNoaxWYbhhDjOgyotVqo%2BXKY9rj7wbw0TwmxG5p1h%2B4agFMMafemgMdI6gGfwExqKg%3D%3D`;
+        let xhtp = new XMLHttpRequest();
+        xhtp.open('get', req_url);
+        xhtp.send();
+        xhtp.onload = pageLoadCallBack;
+
+        ////////////// 위 : 화면단 /  아래: 함수////////////////
+
+        function pageLoadCallBack(){
+            let result = JSON.parse(this.responseText); //JSON.parse(data -> array로 변환) 
+            console.log(result);
+
+            let tbody = document.getElementById('list');
+
+            // 결과 중에서 result.data가 필요한 실데이터. 
+            let data = result.data;
+            gdata = data; 
+
+            let sidoData = []; // 시도리스트 뿌려주기 위한. 
+            let chartData = []; // [['서울특별시',3],['대전광역시',2],[],[]]
+
+            data.forEach((center, idx) => { //center : namem, adress...
+                // 초기화면 
+                if(idx < 10)
+                 tbody.append(makeTr(center));
+
+                 // 시도 데이터 구분 : 없으면(-1이면) 데이터 넣기 
+                 if(sidoData.indexOf(center.sido) == -1){ 
+                    sidoData.push(center.sido);
+                 }
+
+                 //차트에 들어갈 데이터 구분
+                 
+        });
+
+            
+            //select에 option을 달아준다.
+            let sel = document.getElementById('sido');
+            sidoData.forEach(sido => {
+                let opt = document.createElement('option'); //select 하위로 option.
+                opt.textContent = sido;
+                opt.value = sido;
+                sel.append(opt);
+            });
+        }
+
+        function makeTr(center) {
+            let tr = document.createElement('tr');
+            let infos = ['id', 'centerName', 'sido', 'sigungu', 'phoneNumber', 'address']; //보고싶은 항목 배열에 속성이름(그대로) 넣기
+            infos.forEach(info =>{
+                let td = document.createElement('td');
+                let txt = document.createTextNode(center[info]);
+                td.append(txt);
+                tr.append(td);
+            })
+            return tr;
+        }
+            function searchCenterFnc(e){
+                console.log(e.target.nodeName);
+                let sido;
+                if(e.target.nodeName == 'BUTTON'){
+                    sido = document.getElementById('center').value; // 조회하려는 시도
+                }else if(e.target.nodeName == 'SELECT'){
+                    sido = e.target.value;
+
+                }               
+                let tbody = document.getElementById('list');
+
+                // 이미 있던 tr 삭제 : 화면단에 나온 데이터를 감싼 tr 날림(자료 안보이게)
+                document.querySelectorAll('#list>tr').forEach(tr=>tr.remove());
+             
+                // 추가로 그려주는 부분. (찾은 데이터 나오게끔 그려줌)
+                gdata.forEach(center => {
+                    if(center.sido.startsWith(sido)){
+                        tbody.append(makeTr(center)); //조회된 시도.
+                    }
+                });
+
+            }
+
+        
+    </script>
+</body>
+</html>
