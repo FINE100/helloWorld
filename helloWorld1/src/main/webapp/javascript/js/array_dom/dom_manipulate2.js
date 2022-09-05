@@ -137,7 +137,7 @@ function makeTr(mValues =[]){ //[mid, mname, mphone] 들어감
     });
 
     checkbox.addEventListener('change', function(){
-        let checkProp = document.querySelectorAll('tbody tr input[type="checkbox"]');
+        let checkProp = document.querySelectorAll('tr input[type="checkbox"]');
         //[input, input, input => 총 3개] 배열(forEach) : every(), some()
         document.getElementById('allChecked').checked = 
                                                     [...checkProp].every(item => item.checked);
