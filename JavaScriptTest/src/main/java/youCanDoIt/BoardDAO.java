@@ -8,8 +8,8 @@ import java.util.List;
 public class BoardDAO extends DAO {
 
 	public List<Board> getBoardList() {
-		
 		List<Board> board = new ArrayList<>();
+		conn();
 		String sql = "select * from tbl_board";
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -18,7 +18,8 @@ public class BoardDAO extends DAO {
 				Board bd = new Board();
 				bd.setBno(rs.getInt("bno"));
 				bd.setTitle(rs.getString("title"));
-				bd.setContent(rs.getString("writer"));
+				bd.setContent(rs.getString("content"));
+				bd.setWriter(rs.getString("writer"));
 				bd.setCreationDate(rs.getString("creation_date"));
 				board.add(bd);
 			}

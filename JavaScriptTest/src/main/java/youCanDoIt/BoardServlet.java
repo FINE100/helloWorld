@@ -41,6 +41,7 @@ public class BoardServlet extends HttpServlet {
 			obj.addProperty("bno", bd.getBno());
 			obj.addProperty("title", bd.getTitle());
 			obj.addProperty("writer", bd.getWriter());
+			obj.addProperty("content", bd.getContent());
 			obj.addProperty("create_date", bd.getCreationDate());
 			ary.add(obj);
 			

@@ -1,10 +1,5 @@
 // mysource.js
 
-const boards = [
-    {bno : '6', title : '문의', content : '문의',writer: '문의', creationDate : '2022-09-05'},
-     {bno : '7', title : '수정', content : '수정',writer: '수정', creationDate : '2022-09-05'},
-       {bno : '8', title : '삭제', content : '삭제',writer: '삭제', creationDate : '2022-09-05'}
-]
 
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -12,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
  
     
-    showBoard();
 // addBtn.onclick = 'click' > 속성 넣기, <buttond>에 적용될 메서드 만들어짐
 let addBtn = document.querySelector('button');
 addBtn.addEventListener('click', addBoard);
@@ -20,7 +14,7 @@ addBtn.addEventListener('click', addBoard);
 });  
 
  let xhtp = new XMLHttpRequest();
-        xhtp.open('get','../../board') 
+        xhtp.open('get','./board') 
         xhtp.send(); // 서버요청.
       
         xhtp.onload = function(){
@@ -35,17 +29,7 @@ addBtn.addEventListener('click', addBoard);
         	})
         }
         
-function showBoard(){
-        //리스트 보여주기. 
-        let table = document.getElementById('list');
 
-        boards.forEach(board => {
-            let mValues = [];            
-            mValues = Object.values(board); // Object.keys(member) : [속성,속성]
-            let tr = makeTr(mValues);
-            table.appendChild(tr);
-        });
-}
 
 function addBoard(){
     let bno = document.getElementById('bno');
@@ -62,21 +46,14 @@ function addBoard(){
  //       return; //return이 있으면 break; 역할함(강제종료)
 //    }
 
-    const mValues = [bno.value, title.value, content.value, writer.value, creationDate.value];
-    let tr = makeTr(mValues);
-    document.getElementById('list').appendChild(tr);
+    //const mValues = [bno.value, title.value, content.value, writer.value, creationDate.value];
+    
 
-        // 초기화.
-        bno.value = '';
-        title.value = '';
-       content.value = '';
-       writer.value = '';
-
-} 
+}
 
 
 // 신규 데이터 추가시 삭제 버튼 같이 추가하기 
-function makeTr(mValues =[]){
+function makeTr(mValues){
     let tr = document.createElement('tr');
     tr.addEventListener('click', function(){
         console.log(this.firstElementChild.innerText);// <td><button>user1</button></td>
@@ -114,12 +91,12 @@ function makeTr(mValues =[]){
 
 
 
-    mValues.forEach(val => {
+    for (let prop in mValues){
         let td = document.createElement('td'); //id 위치. <td>user1</td>
-        let txt = document.createTextNode(val);
+        let txt = document.createTextNode(mValues[prop]);
         td.appendChild(txt); //<td>user1</td> => td가 감싸고 있으므로 자식요소로 봄
         tr.appendChild(td); //<tr><td>user1</td></tr>
-    });
+    };
 
     // 삭제버튼 추가.
     td = document.createElement('td');
